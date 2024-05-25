@@ -762,7 +762,7 @@ pisa_2022_ajuste = pisa.reindex(['group','country', 'science_2022', 'mathematics
 
 #%% Excluindo algumas observações com base no index
 
-# Supondo que não vamos analisar os países de index 38 até 95
+# Supondo que não vamos analisar os países de index 38 até 95 - Index => linhas
 
 pisa_ocde = pisa.drop(pisa.index[38:96])
 
@@ -791,7 +791,7 @@ print(pisa.info())
 
 # É possível eliminar as observações que apresentem valores faltantes
 
-pisa_na = pisa.dropna()
+pisa_na = pisa.dropna() 
 
 #%% Gerando estatísticas descritivas
 
@@ -925,7 +925,7 @@ sns.countplot(data=comercio, x="market", order=["APAC", "LATAM", "EU", "US", "Af
 sns.countplot(data=comercio, x="market", order=["APAC", "LATAM", "EU", "US", "Africa", "EMEA", "Canada"])
 plt.title("Análise por Mercado")
 plt.xlabel('Mercado',fontsize=12)
-plt.ylabel('Conatgem',fontsize=12)
+plt.ylabel('Contagem',fontsize=12)
 plt.show()
 
 # Podemos trocar as cores das barras
@@ -933,7 +933,7 @@ plt.show()
 sns.countplot(data=comercio, x="market", order=["APAC", "LATAM", "EU", "US", "Africa", "EMEA", "Canada"], color = "blue")
 plt.title("Análise por Mercado")
 plt.xlabel('Mercado',fontsize=12)
-plt.ylabel('Conatgem',fontsize=12)
+plt.ylabel('Contagem',fontsize=12)
 plt.show()
 
 # Conhecendo algumas paletas de cores do seaborn
@@ -964,7 +964,7 @@ ax = sns.countplot(data=comercio, x="market", order=["APAC", "LATAM", "EU", "US"
 ax.bar_label(ax.containers[0], fontsize=8)
 plt.title("Análise por Mercado")
 plt.xlabel('Mercado',fontsize=12)
-plt.ylabel('Conatgem',fontsize=12)
+plt.ylabel('Contagem',fontsize=12)
 plt.show()
 
 # Também poderíamos apresentar o gráfico com os eixos invertidos (var no Y)
@@ -995,6 +995,8 @@ plt.show()
 
 #%% Gráfico de setores - pizza
 
+# normaliza = True -> para transformar em percentual
+
 pizza = pd.crosstab(index = comercio['segment'], columns = 'segmento', normalize = True).sort_values('segmento', ascending = False)
 
 plt.pie(pizza['segmento'], 
@@ -1006,7 +1008,7 @@ plt.pie(pizza['segmento'],
 plt.title('Análise por Segmento')
 plt.show()
 
-#%% Histograma
+#%% Histograma - variáveis métricas
 
 # A seguir, vamos elaborar o histograma do valor das vendas
 
