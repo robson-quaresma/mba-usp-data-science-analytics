@@ -341,8 +341,7 @@ print(tipos)
 
 # Criando um dicionário
 
-dict_uf = {"estado": "SP",
-           "regiao": "Sudeste"}
+dict_uf = {"estado": "SP","regiao": "Sudeste"}
 
 print(dict_uf["estado"])
 print(dict_uf["regiao"])
@@ -493,7 +492,7 @@ valores_convertidos = converter(diversos_valores)
 
 #%% Função com vários inputs
 
-# Vamos criar uma função que calcule a área de um retângulo 
+Vamos criar uma função que calcule a área de um retângulo 
 # Os dois inputs necessários são a base (b) e a altura (h) em metros
 
 def calcular_area(b, h):
